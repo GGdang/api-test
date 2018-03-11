@@ -1,6 +1,6 @@
 # api-test
-  api練習 google-map-api and news-api and movie-api
-  ================================================
+## api練習 google-map-api and news-api and movie-api
+
   
   js練習   用 js 來取得input text中的value跟radio的value後，傳到google-map-api中，最後顯示在網頁上。
   
