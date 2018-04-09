@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Api test1</title>
      <!--bootstrao的CSS掛載-->  
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.standalone.min.css" crossorigin="anonymous">
@@ -74,6 +74,7 @@
     <div class="movie-api-box">
         <input type="button" value="送出" class="btn btn-outline-primary" id="movie-btn" v-on:click="reportData">
         <br>
+        
         <div class="movie-left">
             <h3>OMDb results</h3>
             <label for="" v-for="item,index in movieType.type" class="radioBtn">
@@ -88,6 +89,7 @@
                 </div>
             </div>
         </div>
+    
         <div class="movie-right">
             <h3>TMDb results</h3>
             <div class="serch-show" v-if="tmdbShow">
