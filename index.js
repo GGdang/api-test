@@ -125,7 +125,7 @@
                     url:TMDbMovieApi,
                     type:"GET",
                     success:function(data){
-                        console.log(data);
+                        //console.log(data);
                         //資料排序 year小到大
                        if(data.total_results != 0 ){
                         self.TMDbSerchData = data.results.sort(function(a,b){
@@ -145,6 +145,7 @@
 
                     }
                 });   
+                console.log(OMDbMovieApi);
                 $.ajax({
                     url:OMDbMovieApi,
                     type:"GET",
@@ -166,7 +167,6 @@
                         alert('OMDb資料錯誤');
                     }
                 })
-                
             },
         },
         computed:{

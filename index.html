@@ -77,10 +77,6 @@
         
         <div class="movie-left">
             <h3>OMDb results</h3>
-            <label for="" v-for="item,index in movieType.type" class="radioBtn">
-                <input type="radio" name="movie-tyep" :value="movieType.value[index]" v-model="radioValue" >
-                {{item}}
-            </label>
             <div class="serch-show" v-if="omdbShow">
                 <div v-for="item,index in getLeftData" class="movie-box">
                     <p>名稱:{{item.Title}}</p>
