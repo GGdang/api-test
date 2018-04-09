@@ -145,6 +145,7 @@
 
                     }
                 });   
+                /*
                 console.log(OMDbMovieApi);
                 $.ajax({
                     url:OMDbMovieApi,
@@ -167,7 +168,7 @@
                         alert('OMDb資料錯誤');
                     }
                 })
-            },
+            },*/
         },
         computed:{
 
