@@ -145,7 +145,7 @@
 
                     }
                 });   
-                /*
+                
                 console.log(OMDbMovieApi);
                 $.ajax({
                     url:OMDbMovieApi,
@@ -160,15 +160,19 @@
                             console.log(self.OMDbSerchData);
                             self.omdbShowPar=true;
                         }else{
+                            /*
                             alert('資料有錯');
                             self.omdbShowPar=false;
+                            */
                         }
                     },
                     error:function(){
+                        /*
                         alert('OMDb資料錯誤');
+                        */
                     }
                 })
-            },*/
+            },
         },
         computed:{
 
