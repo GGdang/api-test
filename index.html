@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Api test1</title>
-     <!--bootstrao的CSS掛載-->  
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.standalone.min.css" crossorigin="anonymous">
-     <!--自己的CSS掛載-->
-     <link href="https://cdn.jsdelivr.net/npm/gijgo@1.8.2/combined/css/gijgo.min.css" rel="stylesheet" type="text/css" />
-     <link rel="stylesheet" href="index.css">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <!--bootstrao的CSS掛載-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.standalone.min.css"
+        crossorigin="anonymous">
+    <!--自己的CSS掛載-->
+    <link href="https://cdn.jsdelivr.net/npm/gijgo@1.8.2/combined/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 </head>
+
 <body>
-    <div class="api-test container-fluid">   
+    <div class="api-test container-fluid">
         <div class="google-map-api">
             <h2 class="">google map api</h2>
             <div class="form-check form-check-inline">
@@ -22,28 +26,28 @@
                 <label for="rd-point" class="form-check-label">定點</label>
             </div>
             <br>
-            <label for="">地址:</label>
-            <input type="text" id="goo-point" class="form-control" required>
+            <div class="form-group">
+                <label for="goo-point">地址:</label>
+                <input type="text" id="goo-point" class="form-control" required>
+            </div>
             <div class="form-check">
-                <input type="radio" name="google-map" id="rd-distance" class="form-check-input" >
+                <input type="radio" name="google-map" id="rd-distance" class="form-check-input">
                 <label for="rd-distance" class="form-check-label">規劃路線</label>
             </div>
-            <label for="">出發點:</label>
+            <label for="goo-start">出發點:</label>
             <input type="text" id="goo-start" class="form-control" required disabled>
             <br>
-            <label for="">結束點:</label>
+            <label for="goo-end">結束點:</label>
             <input type="text" id="goo-end" class="form-control" required disabled>
             <br>
             <input type="button" value="送出" class="btn btn-outline-primary" id="goo-post">
             <input type="button" value="重填" class="btn btn-outline-danger" id="goo-reset">
             <br>
-            <iframe id="googlemap" width="400" height="400" frameborder="0"
-            style="border: 0"
-            src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyDwpxBFKSEleqxSG3l-Y6N10YK2_2izTSs
+            <iframe class="w-100" id="googlemap" width="" height="500" frameborder="0" style="border: 0" src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyDwpxBFKSEleqxSG3l-Y6N10YK2_2izTSs
             &origin=台北&destination=淡水">
             </iframe>
         </div>
-    <hr>
+        <hr>
         <div class="news-api">
             <h2>news api</h2>
             <div class="news-api-box">
@@ -63,18 +67,18 @@
             <div class="news-top5">
             </div>
         </div>
-    <hr>
+        <hr>
         <div class="movie-api">
             <h2>movie api</h2>
             <input type="text" v-model="serchKye" class="form-control">
             <movie-api :get-left-data="OMDbSerchData" :omdb-show="omdbShowPar" :get-right-data="TMDbSerchData" :tmdb-show="tmdbShowPar"></movie-api>
         </div>
     </div>
-<template id="movie-api">
-    <div class="movie-api-box">
-        <input type="button" value="送出" class="btn btn-outline-primary" id="movie-btn" v-on:click="reportData">
-        <br>
-        <!--
+    <template id="movie-api">
+        <div class="movie-api-box">
+            <input type="button" value="送出" class="btn btn-outline-primary" id="movie-btn" v-on:click="reportData">
+            <br>
+            <!--
         <div class="movie-left">
             <h3>OMDb results</h3>
             <div class="serch-show" v-if="omdbShow">
@@ -86,31 +90,34 @@
             </div>
         </div>
     -->
-        <div class="movie-right">
-            <h3>TMDb results</h3>
-            <div class="serch-show" v-if="tmdbShow">
-                <div v-for="item,index in getRightData" class="movie-box">
-                    <p>名稱:{{item.title}}</p>
-                    <p>上映年份:{{item.release_date}}</p>
-                    <img :src="item.poster_path" :alt="item.title">
+            <div class="movie-right">
+                <h3>TMDb results</h3>
+                <div class="serch-show" v-if="tmdbShow">
+                    <div v-for="item,index in getRightData" class="movie-box">
+                        <p>名稱:{{item.title}}</p>
+                        <p>上映年份:{{item.release_date}}</p>
+                        <img :src="item.poster_path" :alt="item.title">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</template>
-    
-<!--jq掛載-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<!--bootstrao掛載-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
-<!--vue掛載-->
-<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-<script src="https://cdn.jsdelivr.net/npm/gijgo@1.8.2/combined/js/gijgo.min.js" type="text/javascript"></script>
-<!--firebase掛載-->
-<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
-<!--自己的JS掛載-->
-<script src="index.js"></script>
+    </template>
+
+    <!--jq掛載-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--bootstrao掛載-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
+    <!--vue掛載-->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gijgo@1.8.2/combined/js/gijgo.min.js" type="text/javascript"></script>
+    <!--firebase掛載-->
+    <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+    <!--自己的JS掛載-->
+    <script src="index.js"></script>
 </body>
+
 </html>
