@@ -15,11 +15,11 @@
 			var start_text = document.getElementById("goo-start").value;
 			var end_text = document.getElementById("goo-end").value;
 			var meetingPlace = document.getElementById("meetingPlace");
-			map.src = "https://www.google.com/maps/embed/v1/directions?key=AIzaSyDwpxBFKSEleqxSG3l-Y6N10YK2_2izTSs&origin="
+			map.src = "https://www.google.com/maps/embed/v1/directions?key=AIzaSyD2U6NPDVx-OwF8AAWLvDk6KHMlYvinq80&origin="
 					+ start_text + "&destination=" + end_text;
 		} else {
 			var point_text = document.getElementById("goo-point").value;
-			map.src = "https://www.google.com/maps/embed/v1/place?key=AIzaSyDwpxBFKSEleqxSG3l-Y6N10YK2_2izTSs&q="
+			map.src = "https://www.google.com/maps/embed/v1/place?key=AIzaSyD2U6NPDVx-OwF8AAWLvDk6KHMlYvinq80&q="
 					+ point_text;
 		}
 	};
